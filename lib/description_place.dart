@@ -31,7 +31,7 @@ class DescriptionPlace extends StatelessWidget {
       margin: EdgeInsets.only(top: 322, right: 2),
       child: Icon(
         Icons.star_border,
-        color: Color(0xFFe0e0e0),
+        color: Color(0xFFFDD835),
       ),
     );
 
