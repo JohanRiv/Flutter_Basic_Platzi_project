@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'publication_trip.dart';
 
 class DescriptionPlace extends StatelessWidget {
   double starsCount;
@@ -12,7 +13,7 @@ class DescriptionPlace extends StatelessWidget {
     var listStars = <Widget>[];
 
     Container starsWidgetFull = Container(
-      margin: EdgeInsets.only(top: 322, right: 2),
+      margin: EdgeInsets.only(top: 2, right: 2),
       child: Icon(
         Icons.star,
         color: Color(0xFFFDD835),
@@ -20,7 +21,7 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     Container starsWidgetHalf = Container(
-      margin: EdgeInsets.only(top: 322, right: 2),
+      margin: EdgeInsets.only(top: 2, right: 2),
       child: Icon(
         Icons.star_half,
         color: Color(0xFFFDD835),
@@ -28,32 +29,12 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     Container starsWidgetNone = Container(
-      margin: EdgeInsets.only(top: 322, right: 2),
+      margin: EdgeInsets.only(top: 2, right: 2),
       child: Icon(
         Icons.star_border,
         color: Color(0xFFFDD835),
       ),
     );
-
-    Expanded titleWidget = Expanded(
-        child: Container(
-      margin: EdgeInsets.only(top: 320, left: 20, right: 15),
-      child: Text(
-        titleText,
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-        textAlign: TextAlign.left,
-      ),
-    ));
-
-    Expanded descriptionWidget = Expanded(
-        child: Container(
-      margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-      child: Text(
-        descriptionText,
-        style: TextStyle(fontSize: 20),
-        textAlign: TextAlign.left,
-      ),
-    ));
 
     for (var i = 0; i < 5; i++) {
       if (i < starsCount.toInt()) {
@@ -67,18 +48,42 @@ class DescriptionPlace extends StatelessWidget {
       }
     }
 
+    Container starspool = Container(
+      margin: EdgeInsets.only(top: 320, left: 10),
+      child: Row(
+        children: listStars,
+      ),
+    );
+
+    Container titleWidget = Container(
+      width: MediaQuery.of(context).size.width * 0.5,
+      margin: EdgeInsets.only(top: 320, left: 20),
+      child: Text(
+        titleText,
+        style: TextStyle(
+            fontSize: 30, fontWeight: FontWeight.w900, fontFamily: "Lato"),
+        textAlign: TextAlign.left,
+      ),
+    );
+
+    Container descriptionWidget = Container(
+      margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+      child: Text(
+        descriptionText,
+        style: TextStyle(fontSize: 17, fontFamily: "Lato"),
+        textAlign: TextAlign.left,
+      ),
+    );
+
     return Column(
+      verticalDirection: VerticalDirection.down,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
-          children: [
-            titleWidget,
-            Expanded(
-                child: Row(
-              children: listStars,
-            ))
-          ],
+          children: [titleWidget, starspool],
         ),
         descriptionWidget,
+        new PublicationTrip(),
       ],
     );
   }
