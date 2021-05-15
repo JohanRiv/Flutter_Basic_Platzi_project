@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'publication_trip.dart';
 
 class DescriptionPlace extends StatelessWidget {
   double starsCount;
@@ -67,6 +66,7 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     Container descriptionWidget = Container(
+      width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.only(top: 20, left: 20, right: 20),
       child: Text(
         descriptionText,
@@ -83,7 +83,6 @@ class DescriptionPlace extends StatelessWidget {
           children: [titleWidget, starspool],
         ),
         descriptionWidget,
-        new PublicationTrip(),
       ],
     );
   }
