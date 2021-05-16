@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'button_general.dart';
 
 class DescriptionPlace extends StatelessWidget {
   double starsCount;
@@ -83,6 +84,7 @@ class DescriptionPlace extends StatelessWidget {
           children: [titleWidget, starspool],
         ),
         descriptionWidget,
+        new ButtonGeneral("Ver en Maps")
       ],
     );
   }

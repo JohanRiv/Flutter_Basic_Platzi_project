@@ -11,7 +11,10 @@ class HeaderGradient extends StatelessWidget {
       height: 250,
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Color(0xFF1faa00), Color(0xFF009624)],
+              colors: [
+                Color(0xFF9575cd),
+                Color(0xFF7986cb),
+              ],
               begin: FractionalOffset(0.2, 0),
               end: FractionalOffset(1, 0.6),
               stops: [0, 0.6],
